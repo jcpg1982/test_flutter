@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:test_flutter/utils/CounterService.dart';
+import 'package:test_flutter/src/data/model/Routes.dart';
+import 'package:test_flutter/src/utils/CounterService.dart';
 
 class HomeApp extends StatefulWidget {
   const HomeApp({super.key});
@@ -9,7 +10,6 @@ class HomeApp extends StatefulWidget {
 }
 
 class HomeState extends State<HomeApp> {
-
   final counterService = CounterService();
 
   @override
@@ -24,7 +24,7 @@ class HomeState extends State<HomeApp> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
+              'You have pushed the button this many times: home',
             ),
             Text(
               '${counterService.counter}',
@@ -32,18 +32,9 @@ class HomeState extends State<HomeApp> {
             ),
             TextButton(
                 onPressed: () {
-                  setState(() {
-                    counterService.incrementCounter();
-                  });
+                  Navigator.pushNamed(context, Routes.REGISTER);
                 },
-                child: const Text('Aumentar')),
-            TextButton(
-                onPressed: () {
-                  setState(() {
-                    counterService.decrementCounter();
-                  });
-                },
-                child: const Text('Disminuir'))
+                child: const Text('Second view'))
           ],
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
