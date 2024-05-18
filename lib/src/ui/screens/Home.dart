@@ -1,15 +1,17 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:test_flutter/src/data/model/Routes.dart';
 import 'package:test_flutter/src/utils/CounterService.dart';
 
+@RoutePage()
 class HomeApp extends StatefulWidget {
   const HomeApp({super.key});
 
   @override
-  State<StatefulWidget> createState() => HomeState();
+  State<StatefulWidget> createState() => _HomeState();
 }
 
-class HomeState extends State<HomeApp> {
+class _HomeState extends State<HomeApp> {
   final counterService = CounterService();
 
   @override
@@ -32,7 +34,7 @@ class HomeState extends State<HomeApp> {
             ),
             TextButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, Routes.REGISTER);
+                  context.router.pushNamed(Routes.register);
                 },
                 child: const Text('Second view'))
           ],

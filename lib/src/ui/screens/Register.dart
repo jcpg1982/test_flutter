@@ -1,14 +1,16 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:test_flutter/src/utils/CounterService.dart';
 
+@RoutePage()
 class RegisterApp extends StatefulWidget {
   const RegisterApp({super.key});
 
   @override
-  State<StatefulWidget> createState() => RegisterState();
+  State<StatefulWidget> createState() => _RegisterState();
 }
 
-class RegisterState extends State<RegisterApp> {
+class _RegisterState extends State<RegisterApp> {
   final counterService = CounterService();
 
   @override
@@ -31,7 +33,7 @@ class RegisterState extends State<RegisterApp> {
             ),
             TextButton(
                 onPressed: () {
-                  Navigator.pop(context);
+                  context.router.back();
                 },
                 child: const Text('Regresar al home'))
           ],

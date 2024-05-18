@@ -1,32 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:test_flutter/src/data/model/Routes.dart';
-import 'package:test_flutter/src/ui/screens/Register.dart';
+import 'package:test_flutter/src/config/router/AppRouter.dart';
 
-import '../screens/Home.dart';
+import '../../Locator.dart';
+import '../../config/themes/AppTheme.dart';
 
-void main() {
-  runApp(const MyApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initializeDependencies();
+  runApp(const Main());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  final navigator = const Navigator();
+class Main extends StatelessWidget {
+  const Main({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: '',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      initialRoute: Routes.HOME,
-      routes: {
-        Routes.HOME: (context) => const HomeApp(),
-        Routes.REGISTER: (context) => const RegisterApp()
-      },
-      /*home: const HomeApp(),*/
+  Widget build(Object context) {
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      routerDelegate: appRouter.delegate(),
+      routeInformationParser: appRouter.defaultRouteParser(),
+      theme: AppTheme.light,
     );
+
+    /*MultiBlocProvider(
+        providers: [],
+        child: OKToast(
+            child: MaterialApp.router(
+          //debugShowCheckedModeBanner: false,
+          routerConfig: appRouter.config(),
+          routerDelegate: appRouter.delegate(),
+          routeInformationParser: appRouter.defaultRouteParser(),
+          title: appTitle,
+          theme: AppTheme.light,
+        )));*/
   }
 }
