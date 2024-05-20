@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-class ImageLoad extends StatelessWidget {
+class CustomImageLoad extends StatelessWidget {
   final String imageUrl;
   final double percent;
 
-  const ImageLoad({super.key, required this.imageUrl, required this.percent});
+  const CustomImageLoad(
+      {super.key, required this.imageUrl, required this.percent});
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +23,12 @@ class ImageLoad extends StatelessWidget {
                   loadingProgress.expectedTotalBytes!
               : null;
           if (progress == null) return child;
-          return CircularProgressIndicator(
-            value: progress,
-            backgroundColor: Colors.red,
-          );
+          return Padding(
+              padding: const EdgeInsets.all(10.00),
+              child: CircularProgressIndicator(
+                value: progress,
+                backgroundColor: Colors.red,
+              ));
         },
       ),
     );

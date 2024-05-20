@@ -8,29 +8,18 @@ class CustomListview extends StatelessWidget {
     return SafeArea(
         child: Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Expanded(
-        child: ListView.builder(
-            itemCount: 10,
-            itemBuilder: (context, index) {
-              return Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text('index N° $index', textAlign: TextAlign.justify),
-                  const SizedBox(height: 10)
-                ],
-              );
-            }),
-      ),
+      child: ListView.builder(
+          itemCount: 1000,
+          itemBuilder: (context, index) {
+            return Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                const SizedBox(height: 10),
+                Text('index N° $index', textAlign: TextAlign.justify)
+              ],
+            );
+          }),
     ));
   }
-
-/*@override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(itemBuilder: (context, index) {
-        Text('index N° $index');
-      }),
-    );
-  }*/
 }

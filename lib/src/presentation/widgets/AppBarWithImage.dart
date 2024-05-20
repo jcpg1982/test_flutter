@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'ImageLoad.dart';
+import 'CustomImageLoad.dart';
 
 class AppBarWithImage extends StatelessWidget implements PreferredSizeWidget {
   final String imageUrl;
@@ -18,7 +18,7 @@ class AppBarWithImage extends StatelessWidget implements PreferredSizeWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         leading: Padding(
             padding: const EdgeInsets.all(4.00),
-            child: ImageLoad(imageUrl: imageUrl, size: 30.00)),
+            child: CustomImageLoad(imageUrl: imageUrl, percent: 0.1)),
         title: Text(title));
   }
 }
