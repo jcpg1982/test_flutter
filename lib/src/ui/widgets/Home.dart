@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:test_flutter/src/data/model/Routes.dart';
+import 'package:test_flutter/src/config/router/Routes.dart';
 import 'package:test_flutter/src/utils/CounterService.dart';
 
 @RoutePage()

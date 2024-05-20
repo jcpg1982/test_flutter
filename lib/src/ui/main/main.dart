@@ -21,17 +21,5 @@ class Main extends StatelessWidget {
       routeInformationParser: appRouter.defaultRouteParser(),
       theme: AppTheme.light,
     );
-
-    /*MultiBlocProvider(
-        providers: [],
-        child: OKToast(
-            child: MaterialApp.router(
-          //debugShowCheckedModeBanner: false,
-          routerConfig: appRouter.config(),
-          routerDelegate: appRouter.delegate(),
-          routeInformationParser: appRouter.defaultRouteParser(),
-          title: appTitle,
-          theme: AppTheme.light,
-        )));*/
   }
 }
