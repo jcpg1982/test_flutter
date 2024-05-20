@@ -12,7 +12,14 @@ class CustomListview extends StatelessWidget {
         child: ListView.builder(
             itemCount: 10,
             itemBuilder: (context, index) {
-              return Text('index N° $index');
+              return Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text('index N° $index', textAlign: TextAlign.justify),
+                  const SizedBox(height: 10)
+                ],
+              );
             }),
       ),
     ));
