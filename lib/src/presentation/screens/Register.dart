@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:test_flutter/src/utils/CounterService.dart';
 
-@RoutePage()
 class RegisterApp extends StatefulWidget {
   const RegisterApp({super.key});
 
